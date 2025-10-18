@@ -5,7 +5,7 @@
 
 An interactive quiz website to test knowledge about Brevis, the ZK coprocessor for smart contracts.
 
-Open the Quiz site: [https://vercel.com/i-am-crypto-hodlers-projects/brevis-quiz]
+## Try Bravis Quiz [👉 Here](https://brevis-quiz-tau.vercel.app/)
 
 ## About Brevis
 
@@ -21,7 +21,15 @@ Brevis is a smart ZK coprocessor that enables smart contracts to access and comp
 
 ## Live Demo
 
-[https://vercel.com/i-am-crypto-hodlers-projects/brevis-quiz]
+👉(https://brevis-quiz-tau.vercel.app/)
+<img width="1867" height="865" alt="image" src="https://github.com/user-attachments/assets/5940d68c-15c5-44e3-a8b5-b657e9c97031" />
+
+<img width="1144" height="863" alt="image" src="https://github.com/user-attachments/assets/03cea995-926d-498d-8dc5-4dbc46199bb2" />
+
+<img width="1023" height="841" alt="image" src="https://github.com/user-attachments/assets/73d1edb4-a00c-40cb-be36-9aef15c67127" />
+
+
+
 
 ## Technologies Used
 
@@ -36,6 +44,13 @@ Brevis is a smart ZK coprocessor that enables smart contracts to access and comp
 3. Start the quiz!
 
 <img width="1500" height="500" alt="I’m_crypto_hodler (1)" src="https://github.com/user-attachments/assets/614f5dbb-60e3-45e3-a6ce-bea704dac22f" />
+
+## Creator 
+
+I'm_Crypto_hodler
+
+<img width="747" height="580" alt="image" src="https://github.com/user-attachments/assets/c8e52d3f-2e1a-4679-9d6e-0142b5cab246" />
+
 
 ## Credits
 
