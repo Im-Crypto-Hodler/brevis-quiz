@@ -645,35 +645,34 @@ footer {
     }
 
     /* Twitter CTA Section */
-/* --- Twitter CTA Section Styling to match Brevis Theme --- */
+/* --- Twitter CTA Section Styling to match Brevis Theme (Left Aligned) --- */
 .twitter-profile-section {
-    margin-top: 40px; /* Use margin-top instead of margin-bottom from previous content */
-    padding: 0; /* Already centered by main container, no need for horizontal padding */
+    margin-top: 40px;
+    padding: 0;
 }
 
 .twitter-card {
-    /* Base style should match the main container's look */
+    /* Base style */
     background: var(--bg-white);
-    border: 1px solid var(--border-light); /* Lighter border */
+    border: 1px solid var(--border-light);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 30px var(--shadow-soft); /* Soft shadow */
+    box-shadow: 0 4px 30px var(--shadow-soft);
     position: relative;
     transition: all 0.3s ease;
-    text-align: center; /* Center the follow button */
+    text-align: left; /* Key change: Align content to the left */
 }
 
 .twitter-card:hover {
-    transform: translateY(-3px); /* Subtle lift on hover */
-    box-shadow: 0 8px 40px rgba(59, 130, 246, 0.15); /* Slightly stronger shadow with accent */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(59, 130, 246, 0.15);
 }
 
 /* 1. BANNER IMAGE (Top) */
 .twitter-banner {
     width: 100%;
-    height: 180px; /* Adjusted height */
-    /* Use a gradient from the theme or keep a solid background if no banner image is provided/desired */
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); /* Brevis Gradient */
+    height: 180px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
     overflow: hidden;
 }
 
@@ -689,12 +688,12 @@ footer {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    border: 4px solid var(--bg-white); /* Use theme's white background */
+    border: 4px solid var(--bg-white);
     overflow: hidden;
     position: absolute;
-    top: 125px; /* Adjust overlap based on new banner height */
-    left: 50%; /* Center the avatar */
-    transform: translateX(-50%);
+    top: 125px; 
+    left: 30px; /* Key change: Positioned to the left */
+    /* Remove transform: translateX(-50%); */
     background: var(--bg-white);
     box-shadow: 0 4px 12px var(--shadow-soft);
 }
@@ -708,7 +707,9 @@ footer {
 
 /* 3. USERNAME & BIO */
 .twitter-info {
-    padding: 75px 30px 30px; /* Increased top padding to clear centered avatar */
+    /* Adjusted padding: Left padding remains 30px, Top padding ensures text clears avatar */
+    padding: 20px 30px 30px; 
+    margin-top: -30px; /* Pull up to overlap with the empty space near the avatar */
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -731,14 +732,13 @@ footer {
     color: var(--text-dark);
     line-height: 1.6;
     margin-bottom: 0;
-    white-space: pre-wrap; /* Allows the multiline bio from HTML to display better */
+    white-space: pre-wrap;
 }
 
-/* 4. FOLLOW BUTTON - Using existing .btn-primary style for consistency */
+/* 4. FOLLOW BUTTON */
 .follow-button {
-    /* Apply styles similar to .btn-primary for theme consistency */
     display: inline-block;
-    margin: 30px 30px 40px;
+    margin: 30px 30px 40px; /* Key change: Margin ensures left alignment */
     padding: 16px 40px;
     font-size: 1.05em;
     border: none;
@@ -775,11 +775,12 @@ footer {
         width: 80px;
         height: 80px;
         top: 80px;
-        left: 50%;
+        left: 20px; /* Reduced left padding on mobile */
     }
 
     .twitter-info {
-        padding: 50px 20px 20px;
+        padding: 20px 20px 20px;
+        margin-top: -20px;
     }
 
     .display-name {
@@ -787,10 +788,21 @@ footer {
     }
 
     .follow-button {
-        width: calc(100% - 60px); /* Fill width with margin */
-        margin-left: 30px;
-        margin-right: 30px;
+        width: auto; 
+        margin: 20px; /* Adjust margin */
     }
 }
 /* --- END Twitter CTA Section Styling --- */
+/* Styling for links inside the bio */
+.bio a {
+    color: var(--accent-blue); /* Use your accent color for links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.bio a:hover {
+    color: var(--accent-purple); /* Change color on hover */
+    text-decoration: underline;
+}
 }
