@@ -1,1 +1,81 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brevis Quiz - Test Your Knowledge!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <h1>🔷 BREVIS</h1>
+                <p class="tagline">ZK Coprocessor Quiz</p>
+            </div>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="welcome-screen">
+            <h2>Welcome to the Brevis Knowledge Quiz! 🚀</h2>
+            <p>Test your understanding of Brevis, the ZK coprocessor for smart contracts.</p>
+            <p>Answer <strong>10 questions</strong> and see how much you know!</p>
+            <button id="start-btn" class="btn-primary">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="quiz-screen hidden">
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+            
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">10</span>
+            </div>
+
+            <div class="quiz-container">
+                <h2 id="question-text" class="question-text"></h2>
+                
+                <div id="answers-container" class="answers-container">
+                    <!-- Answers will be inserted here by JavaScript -->
+                </div>
+
+                <button id="next-btn" class="btn-primary hidden">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="results-screen hidden">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <span class="score-total">/10</span>
+                </div>
+            </div>
+            
+            <h3 id="result-message"></h3>
+            <p id="result-description"></p>
+            
+            <div class="result-actions">
+                <button id="restart-btn" class="btn-primary">Try Again</button>
+                <a href="https://brevis.network/" target="_blank" class="btn-secondary">Learn More About Brevis</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Created with 💜 for the Brevis Community</p>
+            <p class="footer-links">
+                <a href="https://brevis.network/" target="_blank">Website</a> • 
+                <a href="https://docs.brevis.network/" target="_blank">Docs</a> • 
+                <a href="https://twitter.com/brevisnetwork" target="_blank">Twitter</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
