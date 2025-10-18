@@ -1,112 +1,11 @@
-
-// Quiz Questions about Brevis
-const quizData = [
-    {
-        question: "What is Brevis?",
-        answers: [
-            "A cryptocurrency wallet",
-            "A ZK coprocessor for smart contracts",
-            "A blockchain network",
-            "A DeFi lending protocol"
-        ],
-        correct: 1
-    },
-    {
-        question: "What does ZK stand for in Brevis's technology?",
-        answers: [
-            "Zetta Kilobyte",
-            "Zero Knowledge",
-            "Zoom Key",
-            "Zonal Keeper"
-        ],
-        correct: 1
-    },
-    {
-        question: "What does Brevis enable smart contracts to do?",
-        answers: [
-            "Mine Bitcoin faster",
-            "Access and compute over arbitrary on-chain data",
-            "Create new tokens",
-            "Execute off-chain payments"
-        ],
-        correct: 1
-    },
-    {
-        question: "What is a coprocessor in the context of Brevis?",
-        answers: [
-            "A secondary blockchain",
-            "A system that handles complex computations for smart contracts",
-            "A type of validator",
-            "A token burning mechanism"
-        ],
-        correct: 1
-    },
-    {
-        question: "What is one main benefit of using Brevis?",
-        answers: [
-            "Lower transaction fees",
-            "Faster block times",
-            "Data-driven smart contract functionality with verifiable computation",
-            "Higher token rewards"
-        ],
-        correct: 2
-    },
-    {
-        question: "Which technology does Brevis use for verifiable computation?",
-        answers: [
-            "Proof of Work",
-            "Proof of Stake",
-            "Zero-Knowledge Proofs",
-            "Sharding"
-        ],
-        correct: 2
-    },
-    {
-        question: "What type of data can Brevis access?",
-        answers: [
-            "Only current block data",
-            "Only transaction history from the last hour",
-            "Arbitrary historical and cross-chain on-chain data",
-            "Only off-chain data"
-        ],
-        correct: 2
-    },
-    {
-        question: "How does Brevis help developers?",
-        answers: [
-            "By providing free tokens",
-            "By enabling data-intensive dApps without compromising decentralization",
-            "By creating new programming languages",
-            "By hosting smart contracts"
-        ],
-        correct: 1
-    },
-    {
-        question: "What makes Brevis different from traditional oracles?",
-        answers: [
-            "It's cheaper",
-            "It uses ZK proofs for trustless data verification",
-            "It's faster",
-            "It only works on Ethereum"
-        ],
-        correct: 1
-    },
-    {
-        question: "What is a potential use case for Brevis?",
-        answers: [
-            "Creating meme coins",
-            "Data-driven DeFi protocols with historical on-chain insights",
-            "Mining cryptocurrencies",
-            "Storing photos on blockchain"
-        ],
-        correct: 1
-    }
-];
+// Import questions from questions.js
+// (questions.js is loaded before script.js in HTML)
 
 // Variables
 let currentQuestion = 0;
 let score = 0;
 let answered = false;
+let quizData = []; // Will hold 10 random questions
 
 // DOM Elements
 const welcomeScreen = document.getElementById('welcome-screen');
@@ -130,10 +29,21 @@ nextBtn.addEventListener('click', nextQuestion);
 restartBtn.addEventListener('click', restartQuiz);
 
 // Initialize
-totalQuestionsEl.textContent = quizData.length;
+totalQuestionsEl.textContent = 10;
+
+// Function to get random questions
+function getRandomQuestions(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+}
 
 // Start Quiz
 function startQuiz() {
+    // Get 10 random questions from the pool
+    quizData = getRandomQuestions(allQuestions, 10);
+    currentQuestion = 0;
+    score = 0;
+    
     welcomeScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     loadQuestion();
