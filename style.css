@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 :root {
-    /* Brevis Color Palette */
+    /* Brevis Color Palette - Light Cream Theme */
     --bg-cream: #F5F1ED;
     --bg-white: #FFFFFF;
     --text-dark: #1A1A1A;
@@ -63,17 +63,19 @@ body::after {
     50% { transform: translate(30px, 30px) scale(1.05); }
 }
 
+/* Main Container - Full Viewport */
 .container {
     background: var(--bg-white);
     border-radius: 24px;
     box-shadow: 0 4px 60px var(--shadow-soft);
-    max-width: 750px;
+    max-width: 900px;
     width: 100%;
     padding: 50px;
     animation: fadeIn 0.6s ease-out;
     position: relative;
     z-index: 1;
     border: 1px solid var(--border-light);
+    min-height: 90vh;
 }
 
 @keyframes fadeIn {
@@ -87,13 +89,38 @@ body::after {
     }
 }
 
-/* Header */
+/* Header - Simple Design */
 header {
     text-align: center;
     margin-bottom: 40px;
     padding-bottom: 30px;
     border-bottom: 1px solid var(--border-light);
     position: relative;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img {
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 10px var(--shadow-soft));
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .logo h1 {
@@ -135,7 +162,7 @@ header {
     margin-top: 12px;
 }
 
-/* Gradient Orb Decoration */
+/* Gradient Orb Decoration Behind Logo */
 .logo::before {
     content: '';
     position: absolute;
@@ -160,6 +187,18 @@ header {
 .welcome-screen {
     text-align: center;
     padding: 20px 0;
+    animation: slideUp 0.7s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .welcome-screen h2 {
@@ -249,6 +288,10 @@ header {
     font-weight: 700;
 }
 
+.quiz-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
 .question-text {
     color: var(--text-dark);
     font-size: 1.6em;
@@ -265,6 +308,7 @@ header {
     margin-bottom: 35px;
 }
 
+/* Answer Buttons with Click Effects */
 .answer-btn {
     background: var(--bg-cream);
     border: 2px solid var(--border-light);
@@ -303,11 +347,21 @@ header {
     transform: scaleY(1);
 }
 
+.answer-btn:active {
+    transform: translateX(8px) scale(0.98);
+}
+
 .answer-btn.selected {
     background: var(--accent-blue);
     color: white;
     border-color: var(--accent-blue);
     box-shadow: 0 6px 25px rgba(59, 130, 246, 0.3);
+    animation: selectPulse 0.4s ease;
+}
+
+@keyframes selectPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
 }
 
 .answer-btn.correct {
@@ -428,7 +482,7 @@ header {
     flex-wrap: wrap;
 }
 
-/* Buttons */
+/* Buttons with Click Effects */
 .btn-primary, .btn-secondary {
     padding: 16px 40px;
     font-size: 1.05em;
@@ -455,6 +509,7 @@ header {
 
 .btn-primary:active {
     transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
 .btn-secondary {
@@ -470,7 +525,11 @@ header {
     box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
 }
 
-/* Footer */
+.btn-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* Footer - Static Design */
 footer {
     margin-top: 50px;
     padding-top: 30px;
@@ -516,19 +575,16 @@ footer {
     display: none !important;
 }
 
-/* Logo Styles */
-.logo-img {
-    width: 140px;
-    height: auto;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 10px var(--shadow-soft));
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 600px) {
     .container {
         padding: 30px 25px;
         border-radius: 20px;
+        min-height: 85vh;
+    }
+
+    .logo-img {
+        width: 100px;
     }
 
     .logo h1 {
@@ -569,7 +625,7 @@ footer {
     }
 }
 
-/* Dark mode support (optional bonus) */
+/* Dark mode support (optional) */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-cream: #1A1A1A;
