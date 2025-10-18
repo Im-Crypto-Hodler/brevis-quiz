@@ -645,13 +645,14 @@ footer {
     }
 
     /* Twitter CTA Section */
-/* --- Twitter CTA Section Styling to match Brevis Theme (Left Aligned & Fixed) --- */
+/* --- Twitter CTA Section Styling to match Brevis Theme (Final Adjustments) --- */
 .twitter-profile-section {
     margin-top: 40px;
     padding: 0;
 }
 
 .twitter-card {
+    /* Retain theme styles */
     background: var(--bg-white);
     border: 1px solid var(--border-light);
     border-radius: 20px;
@@ -667,10 +668,9 @@ footer {
     box-shadow: 0 8px 40px rgba(59, 130, 246, 0.15);
 }
 
-/* 1. BANNER IMAGE (FIXED HEIGHT/COVER) */
+/* 1. BANNER IMAGE */
 .twitter-banner {
     width: 100%;
-    /* Key Fix: Set a fixed height that works for the content below it */
     height: 180px; 
     background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
     overflow: hidden;
@@ -679,7 +679,6 @@ footer {
 .twitter-banner img {
     width: 100%;
     height: 100%;
-    /* Key Fix: Ensure the 1500x1500 image covers the banner area */
     object-fit: cover; 
     display: block;
 }
@@ -696,7 +695,7 @@ footer {
     left: 30px; 
     background: var(--bg-white);
     box-shadow: 0 4px 12px var(--shadow-soft);
-    z-index: 10; /* Ensure PFP is above the text */
+    z-index: 10; 
 }
 
 .twitter-avatar img {
@@ -706,33 +705,36 @@ footer {
     display: block;
 }
 
-/* 3. USERNAME & BIO (FIXED POSITIONING) */
+/* 3. USERNAME & BIO (FIXED TEXT POSITIONING) */
 .twitter-info {
-    /* Set a custom variable for the horizontal offset (PFP width + margin) */
-    --pfp-offset: 170px; 
+    --pfp-offset: 170px; /* 110px PFP + 30px left margin + 30px gap */
 
-    /* Initial padding for the entire block */
     padding: 20px 30px 30px; 
     margin-top: -30px; 
     border-bottom: 1px solid var(--border-light);
     position: relative;
-    padding-left: var(--pfp-offset); /* Push text right of the PFP */
+    padding-left: 30px; /* Reset left padding to 30px for the whole block */
+}
+
+.name-and-username {
+    padding-left: var(--pfp-offset); /* Push the name/username container right */
+    padding-top: 10px; /* Add slight top padding for breathing room */
+    margin-bottom: 20px; /* Space between username and links */
 }
 
 .display-name {
     font-size: 1.6em;
     font-weight: 700;
     color: var(--text-dark);
-    margin-bottom: 4px;
+    margin-bottom: 0px; /* Removed extra spacing */
     letter-spacing: -0.5px;
-    /* Move the text up to be positioned correctly relative to the PFP */
-    margin-top: -85px; 
+    margin-top: -85px; /* Key Fix: Move text block up to align with PFP */
 }
 
 .username {
     font-size: 0.95em;
     color: var(--text-gray);
-    margin-bottom: 15px;
+    margin-bottom: 0px; /* Removed extra spacing */
 }
 
 .bio {
@@ -741,24 +743,23 @@ footer {
     line-height: 1.6;
     margin-bottom: 0;
     white-space: pre-wrap;
-    /* Reset left padding for the bio itself to take full width after the header */
-    padding-left: 0; 
+    padding-left: 0;
 }
 
-/* Styling for links inside the bio (FIXED SPACING) */
-.bio a, .bio {
-    /* Key Fix 3: Remove space between links by setting line height and margin/padding */
-    line-height: 1.2;
-    margin-bottom: 0; 
-    padding: 0;
-}
+/* TIGHT SPACING FOR LINKS */
 .bio br {
-    line-height: 0.8; /* Reduce space created by <br> tags */
+    line-height: 0.8; 
     content: " ";
     display: block;
-    margin-bottom: 5px; /* Add a small controlled vertical space */
+    margin-bottom: 0; /* Key Fix: Remove margin/spacing between links */
+}
+.bio p { /* Target the paragraph holding all links */
+    margin-bottom: 0;
+    line-height: 1.5; /* Tighten line spacing for the text blocks */
 }
 
+
+/* Link appearance */
 .bio a {
     color: var(--accent-blue);
     text-decoration: none;
@@ -771,10 +772,12 @@ footer {
     text-decoration: underline;
 }
 
-/* 4. FOLLOW BUTTON (CUSTOM COLOR) */
+/* 4. FOLLOW BUTTON (CUSTOM COLOR & LAYOUT) */
 .follow-button-custom {
-    display: inline-block;
-    margin: 30px 30px 40px; 
+    display: block; /* Make button fill horizontal space */
+    width: calc(100% - 60px); /* Fill the width of the card, minus padding */
+    margin: 30px; /* Center with 30px margin on all sides */
+    text-align: center;
     padding: 16px 40px;
     font-size: 1.05em;
     border: none;
@@ -785,8 +788,8 @@ footer {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     
-    /* Key Fix 4: Custom Color using a bold red/orange gradient matching your PFP */
-    background: linear-gradient(135deg, #FF6B35, #A30000); /* Deep Orange to Red */
+    /* Custom Color: Deep Orange to Red */
+    background: linear-gradient(135deg, #FF6B35, #A30000); 
     color: white;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
@@ -804,34 +807,29 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
-    .twitter-banner {
-        height: 120px;
-    }
-
-    .twitter-avatar {
-        width: 80px;
-        height: 80px;
-        top: 80px;
-        left: 20px; 
+    /* ... (rest of the mobile styles should remain similar) ... */
+    .twitter-info {
+        padding: 20px;
+        margin-top: -20px;
+        padding-left: 20px;
     }
     
-    .twitter-info {
-        padding: 20px 20px 20px;
-        margin-top: -20px;
-        padding-left: 120px; /* Adjusted offset for mobile (80px PFP + 40px margin) */
+    .name-and-username {
+        padding-left: 120px; /* PFP + gap for mobile */
+        padding-top: 10px;
+        margin-bottom: 15px;
     }
     
     .display-name {
         margin-top: -65px; 
         font-size: 1.4em;
     }
-
+    
     .follow-button-custom {
-        width: auto; 
+        width: calc(100% - 40px); 
         margin: 20px; 
     }
 }
-/* --- END Twitter CTA Section Styling --- */
 /* --- END Twitter CTA Section Styling --- */
 /* Styling for links inside the bio */
 .bio a {
