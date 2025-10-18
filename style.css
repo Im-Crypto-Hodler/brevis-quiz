@@ -645,31 +645,35 @@ footer {
     }
 
     /* Twitter CTA Section */
+/* --- Twitter CTA Section Styling to match Brevis Theme --- */
 .twitter-profile-section {
-    margin-bottom: 40px;
-    padding: 0 20px;
+    margin-top: 40px; /* Use margin-top instead of margin-bottom from previous content */
+    padding: 0; /* Already centered by main container, no need for horizontal padding */
 }
 
 .twitter-card {
-    background: white;
-    border: 2px solid var(--border-light);
+    /* Base style should match the main container's look */
+    background: var(--bg-white);
+    border: 1px solid var(--border-light); /* Lighter border */
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 30px var(--shadow-soft); /* Soft shadow */
     position: relative;
     transition: all 0.3s ease;
+    text-align: center; /* Center the follow button */
 }
 
 .twitter-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 8px 40px rgba(59, 130, 246, 0.15); /* Slightly stronger shadow with accent */
 }
 
 /* 1. BANNER IMAGE (Top) */
 .twitter-banner {
     width: 100%;
-    height: 200px;
-    background: linear-gradient(135deg, #1DA1F2, #8B5CF6);
+    height: 180px; /* Adjusted height */
+    /* Use a gradient from the theme or keep a solid background if no banner image is provided/desired */
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); /* Brevis Gradient */
     overflow: hidden;
 }
 
@@ -682,16 +686,17 @@ footer {
 
 /* 2. PROFILE PICTURE (Overlaps banner) */
 .twitter-avatar {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 4px solid var(--bg-white); /* Use theme's white background */
     overflow: hidden;
     position: absolute;
-    top: 140px; /* Overlaps banner */
-    left: 30px;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    top: 125px; /* Adjust overlap based on new banner height */
+    left: 50%; /* Center the avatar */
+    transform: translateX(-50%);
+    background: var(--bg-white);
+    box-shadow: 0 4px 12px var(--shadow-soft);
 }
 
 .twitter-avatar img {
@@ -703,106 +708,89 @@ footer {
 
 /* 3. USERNAME & BIO */
 .twitter-info {
-    padding: 70px 30px 20px 30px; /* Top padding to clear avatar */
+    padding: 75px 30px 30px; /* Increased top padding to clear centered avatar */
     border-bottom: 1px solid var(--border-light);
 }
 
 .display-name {
-    font-size: 1.8em;
-    font-weight: 800;
+    font-size: 1.6em;
+    font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 4px;
     letter-spacing: -0.5px;
 }
 
 .username {
-    font-size: 1.05em;
+    font-size: 0.95em;
     color: var(--text-gray);
     margin-bottom: 15px;
 }
 
 .bio {
-    font-size: 1em;
+    font-size: 0.95em;
     color: var(--text-dark);
     line-height: 1.6;
     margin-bottom: 0;
+    white-space: pre-wrap; /* Allows the multiline bio from HTML to display better */
 }
 
-/* 4. FOLLOW BUTTON */
+/* 4. FOLLOW BUTTON - Using existing .btn-primary style for consistency */
 .follow-button {
+    /* Apply styles similar to .btn-primary for theme consistency */
     display: inline-block;
-    margin: 25px 30px;
-    padding: 14px 35px;
-    background: #1DA1F2;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
+    margin: 30px 30px 40px;
+    padding: 16px 40px;
     font-size: 1.05em;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    
+    /* Brevis Theme Primary Button Style */
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .follow-button:hover {
-    background: #0c8dd6;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
 }
 
-/* Footer Divider */
-.footer-divider {
-    height: 1px;
-    background: var(--border-light);
-    margin: 30px 0;
-}
-
-/* Footer Styles */
-footer {
-    margin-top: 50px;
-    padding-top: 30px;
-    text-align: center;
-    color: var(--text-gray);
-    font-size: 0.9em;
-    border-top: 1px solid var(--border-light);
-}
-
-.footer-credit {
-    margin-bottom: 8px;
+.follow-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* Responsive */
 @media (max-width: 600px) {
     .twitter-banner {
-        height: 150px;
+        height: 120px;
     }
 
     .twitter-avatar {
-        width: 90px;
-        height: 90px;
-        top: 105px;
-        left: 20px;
+        width: 80px;
+        height: 80px;
+        top: 80px;
+        left: 50%;
     }
 
     .twitter-info {
-        padding: 55px 20px 15px 20px;
+        padding: 50px 20px 20px;
     }
 
     .display-name {
-        font-size: 1.5em;
-    }
-
-    .username {
-        font-size: 0.95em;
-    }
-
-    .bio {
-        font-size: 0.95em;
+        font-size: 1.4em;
     }
 
     .follow-button {
-        width: calc(100% - 40px);
-        margin: 20px 20px;
-        text-align: center;
+        width: calc(100% - 60px); /* Fill width with margin */
+        margin-left: 30px;
+        margin-right: 30px;
     }
 }
+/* --- END Twitter CTA Section Styling --- */
 }
