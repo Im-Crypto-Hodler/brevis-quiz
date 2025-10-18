@@ -645,195 +645,118 @@ footer {
     }
 
     /* Twitter CTA Section */
-.twitter-cta {
+.twitter-profile-section {
     margin-bottom: 40px;
     padding: 0 20px;
 }
 
 .twitter-card {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    background: white;
     border: 2px solid var(--border-light);
-    border-radius: 24px;
-    padding: 40px 30px;
-    text-align: center;
-    position: relative;
+    border-radius: 20px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.twitter-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
-    animation: rotateGradient 10s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes rotateGradient {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .twitter-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
-    border-color: var(--accent-blue);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Large Twitter Icon */
-.twitter-icon-large {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
-    color: #1DA1F2;
-    animation: float 3s ease-in-out infinite;
-}
-
-.twitter-icon-large svg {
+/* 1. BANNER IMAGE (Top) */
+.twitter-banner {
     width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 4px 8px rgba(29, 161, 242, 0.3));
-}
-
-/* Twitter Heading */
-.twitter-heading {
-    font-size: 2em;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-}
-
-.twitter-tagline {
-    font-size: 1.1em;
-    color: var(--text-gray);
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-/* Twitter Profile Link */
-.twitter-profile-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    border: 2px solid var(--border-light);
-    border-radius: 16px;
-    padding: 20px 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #1DA1F2, #8B5CF6);
     overflow: hidden;
 }
 
-.twitter-profile-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+.twitter-banner img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.twitter-profile-link:hover::before {
-    left: 100%;
-}
-
-.twitter-profile-link:hover {
-    border-color: #1DA1F2;
-    box-shadow: 0 8px 25px rgba(29, 161, 242, 0.2);
-    transform: translateX(5px);
-}
-
-/* Twitter Profile Display */
-.twitter-profile {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.twitter-avatar {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #1DA1F2, #0c8dd6);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
-}
-
-.twitter-avatar svg {
-    width: 24px;
-    height: 24px;
-}
-
-.twitter-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.twitter-username {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--text-dark);
+    object-fit: cover;
     display: block;
 }
 
-.twitter-handle {
-    font-size: 0.95em;
-    color: var(--text-gray);
-    font-weight: 500;
+/* 2. PROFILE PICTURE (Overlaps banner) */
+.twitter-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    position: absolute;
+    top: 140px; /* Overlaps banner */
+    left: 30px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Follow Button */
-.follow-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #1DA1F2, #0c8dd6);
+.twitter-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 3. USERNAME & BIO */
+.twitter-info {
+    padding: 70px 30px 20px 30px; /* Top padding to clear avatar */
+    border-bottom: 1px solid var(--border-light);
+}
+
+.display-name {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.username {
+    font-size: 1.05em;
+    color: var(--text-gray);
+    margin-bottom: 15px;
+}
+
+.bio {
+    font-size: 1em;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* 4. FOLLOW BUTTON */
+.follow-button {
+    display: inline-block;
+    margin: 25px 30px;
+    padding: 14px 35px;
+    background: #1DA1F2;
     color: white;
-    padding: 12px 28px;
+    text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1em;
+    font-size: 1.05em;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
 }
 
-.twitter-profile-link:hover .follow-btn {
-    transform: translateX(5px);
+.follow-button:hover {
+    background: #0c8dd6;
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
-}
-
-.arrow-icon {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease;
-}
-
-.twitter-profile-link:hover .arrow-icon {
-    transform: translateX(3px);
 }
 
 /* Footer Divider */
 .footer-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+    background: var(--border-light);
     margin: 30px 0;
 }
 
-/* Update existing footer styles */
+/* Footer Styles */
 footer {
     margin-top: 50px;
     padding-top: 30px;
@@ -847,73 +770,39 @@ footer {
     margin-bottom: 8px;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .twitter-card {
-        padding: 30px 20px;
-    }
-
-    .twitter-icon-large {
-        width: 50px;
-        height: 50px;
-    }
-
-    .twitter-heading {
-        font-size: 1.6em;
-    }
-
-    .twitter-tagline {
-        font-size: 1em;
-    }
-
-    .twitter-profile-link {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .twitter-profile {
-        width: 100%;
-    }
-
-    .follow-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* Optional: Add animation for visibility */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.twitter-cta {
-    animation: fadeInUp 0.8s ease-out 0.3s both;
-}
-    .twitter-banner {
-    width: 100%;
-    height: 180px;
-    margin: -40px -30px 30px -30px;
-    overflow: hidden;
-    border-radius: 22px 22px 0 0;
-}
-
-.twitter-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Responsive */
 @media (max-width: 600px) {
     .twitter-banner {
-        height: 140px;
-        margin: -30px -20px 25px -20px;
+        height: 150px;
     }
+
+    .twitter-avatar {
+        width: 90px;
+        height: 90px;
+        top: 105px;
+        left: 20px;
+    }
+
+    .twitter-info {
+        padding: 55px 20px 15px 20px;
+    }
+
+    .display-name {
+        font-size: 1.5em;
+    }
+
+    .username {
+        font-size: 0.95em;
+    }
+
+    .bio {
+        font-size: 0.95em;
+    }
+
+    .follow-button {
+        width: calc(100% - 40px);
+        margin: 20px 20px;
+        text-align: center;
+    }
+}
 }
