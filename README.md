@@ -1,5 +1,8 @@
 # 🔷 Brevis Quiz Website
 
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/8a0cde4d-f918-4a03-8883-6e7b94a3c19e" />
+
+
 An interactive quiz website to test knowledge about Brevis, the ZK coprocessor for smart contracts.
 
 ## About Brevis
