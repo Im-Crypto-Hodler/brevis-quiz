@@ -11,7 +11,7 @@ Brevis is a smart ZK coprocessor that enables smart contracts to access and comp
 
 ## Features
 
-- 10 Multiple-choice questions about Brevis
+- 10 Random Multiple-choice questions about Brevis
 - Beautiful responsive design
 - Score tracking and feedback
 - Smooth animations and transitions
@@ -19,7 +19,7 @@ Brevis is a smart ZK coprocessor that enables smart contracts to access and comp
 
 ## Live Demo
 
-[Your Vercel URL will go here]
+[https://vercel.com/i-am-crypto-hodlers-projects/brevis-quiz]
 
 ## Technologies Used
 
